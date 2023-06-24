@@ -1,0 +1,75 @@
+ # eu criei essas tabelas só para testa o sistema, elas precisam ser alteradas
+
+ # o arquivos id precisa  ter o mesmo id que a tabela produto se não vai da convergência nas imagens
+
+CREATE SCHEMA `cafeteria` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci ;
+use cafeteria;
+
+CREATE TABLE produto (
+	id int AUTO_INCREMENT,
+    nome VARCHAR(20),
+    descricao VARCHAR(255),
+    cod_product VARCHAR(255),
+    quantidade VARCHAR(20),
+    validade VARCHAR(20),
+    preco VARCHAR(20),
+    PRIMARY KEY (id)
+    );
+    
+    CREATE TABLE arquivos(
+	nome varchar(40),
+    path VARCHAR(50),
+    id int auto_increment,
+	PRIMARY KEY (id)
+);
+    
+CREATE TABLE funcionarios (
+	id int AUTO_INCREMENT primary key,
+    nome VARCHAR(40),
+	sobrenome VARCHAR(40),
+    cpf VARCHAR(40),
+    emissor VARCHAR(40),
+    data_nascimento VARCHAR(40),
+    telefone VARCHAR(20),
+    email VARCHAR(40),
+	admissao VARCHAR(40),
+    demissao VARCHAR(40),
+    cargo int,
+    senha VARCHAR(40),
+    resposta VARCHAR(10),
+	observacao VARCHAR(255),
+    CONSTRAINT unique_email UNIQUE (email),
+    CONSTRAINT unique_cpf UNIQUE (cpf)
+);
+
+DROP TABLE token;
+CREATE TABLE token (
+id int AUTO_INCREMENT primary key,
+ token VARCHAR(10)
+);
+
+INSERT INTO token (token) Values ('macarrão');
+
+-- Inserção dos funcionários
+INSERT INTO funcionarios (nome, sobrenome, cpf, emissor, data_nascimento, telefone, email, admissao, cargo, senha, resposta, observacao)
+VALUES
+    ('Jane', 'Austen', '12345678901', 'SSP', '16/12/1775', '999999999', 'jane.austen@example.com', '01/01/2023', 1, 'senha123', 'Edilberto', ''),
+    ('Charles', 'Dickens', '23456789012', 'SSP', '07/02/1812', '888888888', 'charles.dickens@example.com', '01/01/2023', 1, 'senha123', 'Edilberto', ''),
+    ('Fyodor', 'Dostoevsky', '34567890123', 'SSP', '11/11/1821', '777777777', 'fyodor.dostoevsky@example.com', '01/01/2023', 1, 'senha123', 'Edilberto', ''),
+    ('Jane', 'Eyre', '45678901234', 'SSP', '21/04/1816', '666666666', 'jane.eyre@example.com', '01/01/2023', 1, 'senha123', 'Edilberto', ''),
+    ('Herman', 'Melville', '56789012345', 'SSP', '01/08/1819', '555555555', 'herman.melville@example.com', '01/01/2023', 1, 'senha123', 'Edilberto', '');
+
+-- Inserção dos produtos da cafeteria
+INSERT INTO produto (nome, descricao, cod_product, quantidade, validade, preco)
+VALUES
+    ('Café Orgulho e Preconceito', 'Café aromático com notas de baunilha e caramelo', 'CAFEOP001', '100', '31/12/2023', '10.99'),
+    ('Café Grandes Esperanças', 'Café encorpado com sabor intenso de chocolate', 'CAFEGE001', '100', '31/12/2023', '12.99'),
+    ('Bolo Crime e Castigo', 'Bolo de chocolate com cobertura de morango', 'BOLOCC001', '50', '31/12/2023', '7.99'),
+    ('Bolo Orgulho e Preconceito', 'Bolo de baunilha com recheio de frutas vermelhas', 'BOLOOP001', '50', '31/12/2023', '9.99'),
+    ('Cookie Moby Dick', 'Cookie de aveia e passas', 'COOKIEMD001', '200', '31/12/2023', '2.99');
+
+
+    INSERT INTO funcionarios(nome, sobrenome, cpf, emissor, data_nascimento, telefone, email, admissao, cargo, senha, observacao) VALUES ("mARIA", "fARIA", "12371247183", "ASFHASDJ", "1998-12-21", "3247823894723784", 
+    "DHAS@GMAIL.COM", "2023-02-12", "adm", "123456", "obs1");
+    
+    
