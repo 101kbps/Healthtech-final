@@ -1,0 +1,1018 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+ 
+/* O arquivo está foi modificado para style1.css é o css feito pela helena para a página */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.login_body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background:linear-gradient(to bottom, #97A6E1, #e1e4f0);
+    background-size: cover;
+    background-position: center;
+}
+table
+
+canvas{
+    position: absolute;
+    z-index: .1;
+    width: 100%;
+    Height: 100%;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.logo{
+    font-size: 2em;
+    color: #fff;
+    user-select: none;
+}
+
+/*barra de navegação*/
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+
+
+
+/*botão de login no meu de navegação*/
+.navigation .btnLogin-popup {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navigation .btnLogin-popup:hover {
+    background: #fff;
+    color: #162938;
+}
+
+
+
+.wrapper{
+    position: relative;
+    width: 400px;
+    height: 480px;
+    background: transparent;
+    border: none;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*deixa os formularios de login e recuperar senha quando não estão na caixa principal*/
+    overflow: hidden;
+}
+
+.wrapper.active{
+    height: 320px;
+}
+
+.wrapper .form-box.login{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+/* manda o login para o canto esquerdo*/
+.wrapper.active .form-box.login{
+    transition: none;
+    transform: translateX(-400px);
+}
+/* manda o recupera senha para o canto direito*/
+.wrapper .form-box.register{
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+/*efeito de transição de tela de recuperar senha para login*/
+.wrapper.active .form-box.register{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.form-box h2 {
+    font-size: 2em;
+    color: #162938;
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+.input-box{
+    position: relative;
+    width: 320px;
+    height: 50px;
+    border-bottom: 2px solid #162938;
+    margin: 30px 0;
+}
+
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #162938;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label { 
+    top: -5px;
+}
+ /*formata os campos de preenchimento*/
+.input-box input,
+.input-box select
+ {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+/*formata os icones dos campos de preenchimento*/
+.input-box .icon{
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #162938;
+    line-height: 57px;
+}
+
+.btn_login{
+    width: 100%;
+    height: 45px;
+    background: #162938;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 3px;
+}
+
+.login-register{
+    font-size: .9em;
+    color: #162938;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.login-register p a {
+    color: #162938;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-register p a:hover{
+    text-decoration: underline;
+}
+
+/*CSS TABLE*/
+
+.table_body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #97A6E1;
+    background-size: cover;
+    background-position: center;
+}
+
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navigation a:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.container {
+    margin: 20px;
+}
+
+#main-title {
+    text-align: center;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+thead {
+    background-color: #f2f2f2;
+}
+
+a ion-icon{
+    position: sticky;
+    color: #162938;
+    vertical-align: middle;
+    font-size: 40px;
+}
+
+td a ion-icon {
+    font-size: 30px;
+    vertical-align: middle;
+    color: #162938;
+}
+
+main.table {
+    width: 92vw;
+    height: 80vh;
+    background-color: #fff5;
+    backdrop-filter: blur(7px);
+    box-shadow: 0 .4rem .8rem #0005;
+    border-radius: .8rem;
+    overflow: hidden;
+}
+
+.table__header {
+    width: 100%;
+    height: 10%;
+    background-color: #fff4;
+    padding: .8rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table__body {
+    width: 95%;
+    max-height: calc(89% - 1.6rem);
+    background-color: #fffb;
+    margin: .8rem auto;
+    border-radius: .6rem;
+    overflow: auto;
+    overflow: overlay;
+}
+
+.table__body::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.table__body::-webkit-scrollbar-thumb {
+    border-radius: .5rem;
+    background-color: #0004;
+    visibility: hidden;
+}
+
+.table__body:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+}
+
+table {
+    width: 100%;
+}
+/* imagens caso fossem usadas
+td img {
+    width: 36px;
+    height: 36px;
+    margin-right: .5rem;
+    border-radius: 50%;
+    vertical-align: middle;
+}*/
+
+table,
+th,
+td {
+    border-collapse: collapse;
+    padding: 1rem;
+    text-align: left;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #97A6E1;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #0000000b;
+}
+
+tbody tr {
+    --delay: .1s;
+    transition: .5s ease-in-out var(--delay), background-color 0s;
+}
+
+tbody tr.hide {
+    opacity: 0;
+    transform: translateX(100%); 
+}
+
+tbody tr:hover {
+    background-color: #fff6 !important;
+}
+
+tbody tr td,
+tbody tr td p,
+tbody tr td img {
+    transition: .2s ease-in-out;
+}
+
+tbody tr.hide td{
+    padding: 0;
+    font: 0/0 sans-serif;
+    transition: .2s ease-in-out .5s;
+}
+
+tbody tr.hide td img {
+    width: 0;
+    height: 0;
+    transition: .2s ease-in-out .5s;
+}
+
+/* o botão ícone de deletar na table.php*/
+  .delete-btn{
+    background: transparent;
+    font-size: 30px;
+    border-color: transparent;
+    padding-right: 10px;
+  }
+
+
+/*CSS FORMULÁRIOS*/
+.form_body
+{
+  background-color:#97A6E1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+}
+.Todo
+{
+  position: flex;
+  background-color: transparent;
+  width: 100%;
+  min-height: 100px;
+  margin: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+}
+
+ /* CSS SHOW.PHP */
+.lado_esquerdo {
+    position: relative;
+    background:transparent;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px #00000056;
+    width: 50%;
+  }
+  
+  .lado_esquerdo h6, h4, h3 {
+    color: #000000b6;
+  }
+  
+  .lado_esquerdo h3{
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+
+ .lado_esquerdo h5{
+    color: #00000056;
+    font-weight: 400;
+ }
+  
+  .perfil {
+    display: flex;
+    position: relative;
+    max-height: 9%;
+    background: #eae6fd;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0px 10px 40px #00000056;
+    color: #97A6E1;
+   
+  }
+/* caso fossem usadas as imagens
+  h4 img {
+    width: 36px;
+    height: 36px;
+    margin-right: .5rem;
+    border-radius: 50%;
+    vertical-align: middle;
+    
+}*/
+
+  
+  .perfil h4 span
+  {
+    font-size: 15px;
+    font-weight: 400;
+    color: #00000056;
+  }
+
+  .editar h4{
+    font-size: 15px;
+    font-weight: 400;
+    color: #00000056;
+  }
+
+
+  .editar h4 span
+  {
+    color: #000000b6;
+    font-weight: 800;
+  }
+  
+  .perfil button.edit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    padding: 10px 0px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    background: #97A6E1;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px #00000056;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+  
+  .perfil button.edit a {
+    text-decoration: none;
+    color: #F4F2FF;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+  }
+  
+  
+  .editar {
+  position: relative;
+  margin-top: 30px;
+  background: #eae6fd;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0px 10px 40px #00000056;
+  color: #97A6E1;
+  min-width: 60%;
+  min-height: 60%;
+}
+
+.editar .texfield-group- {
+  position: relative;
+}
+
+.editar .edit-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  justify-content: end;
+  width: 20%;
+  padding: 10px 0px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  background: #97A6E1;
+  cursor: pointer;
+  box-shadow: 0px 10px 40px #00000056;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+/* botão de deletar que seria usado na página SHOW.PHP
+.editar .delete-button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  justify-content: end;
+  width: 20%;
+  padding: 10px 0px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  background: #97A6E1;
+  cursor: pointer;
+  box-shadow: 0px 10px 40px #00000056;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+*/
+
+.editar button a {
+  text-decoration: none;
+  color: #F4F2FF;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+/* o link para voltar para a página TABLE.PHP*/
+ .back a{
+        position: relative;
+        font-size: 1.1em;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        margin-left: 40px;
+        justify-content: end;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+    }
+    
+ 
+    .back a:after{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        width: 100%;
+        height: 3px;
+        background: #fff;
+        border-radius: 5px;
+        transform-origin: right;
+        transform: scaleX(0);
+        transition: transform .5s;
+    }
+    
+   .back a:hover::after{
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+
+
+ /* CSS CREATE.PHP E UPDATE.PHP */
+.lado_direito
+{
+  margin-top: 90px;
+  padding: 40px;
+  color: #003147;
+  width: 45%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #e1e4f0;
+  padding: 30px 35px;
+  border-radius: 20px;
+  box-shadow: 0px 10px 40px #00000056;
+}
+
+
+
+.card  h1 {
+  color: #3d4b82;
+  font-weight: 800;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+
+.texfield {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+.texfield input,
+.texfield select,
+.texfield textarea {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: transparent;
+    color: #000000b6;
+    box-shadow: 0px 10px 40px #00000056;
+    outline: #97A6E1;
+    box-sizing: border-box;
+}
+
+.texfield label {
+    color: #000000b6;
+    margin-bottom: 10px;
+}
+
+.texfield input::placeholder,
+.texfield textarea::placeholder {
+    color: #00000056;
+}
+
+.btn {
+    width: 100%;
+    padding: 16px 0px;
+    margin: 25px 0px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #F4F2FF;
+    background: #97A6E1;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px #00000056;
+}
+
+
+/* a diferença do texfield-group e texfield-group- é que o primeiro é para alinhar 3 itens,
+e o segundo para alinhar 2 */
+
+.texfield-group {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: flex-start;
+    margin: 10px 0px;
+  }
+  
+  .texfield-group .texfield {
+    width: calc(33.33% - 10px); /* Divide o espaço igualmente em 3 colunas, subtraindo a margem entre os campos */
+  }
+  
+  
+
+.texfield-group- {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: flex-start;
+    margin: 10px 0px;
+}
+
+.texfield-group- .texfield {
+    width: calc(50% - 10px); /* Divide o espaço igualmente em 2 colunas, subtraindo a margem entre os campos */
+}
+
+
+/* CONTATAR.PHP */
+.box{
+    position: relative;
+    width: 500px;
+    height: 90%;
+    background: transparent;
+    border: none;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    margin: 20px 20px;
+
+}
+
+.box label,
+.box h1{
+    color: #162938;
+}
+
+.box button{
+    background: #162938;
+}
+
+.box input,
+.box select,
+.box textarea{
+    background: #f4f2ff50;
+}
+
+
+/*Animação cafe*/
+.coffe {
+    width: 300px;
+    height: 280px;
+    position: absolute;
+    top: calc(50% - 140px);
+    left: calc(50% - 150px);
+  }
+  .coffee-header {
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ddcfcc;
+    border-radius: 10px;
+  }
+  .coffee-header__buttons {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 25px;
+    background-color: #282323;
+    border-radius: 50%;
+  }
+  .coffee-header__buttons::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    bottom: -8px;
+    left: calc(50% - 4px);
+    background-color: #615e5e;
+  }
+  .coffee-header__button-one {
+    left: 15px;
+  }
+  .coffee-header__button-two {
+    left: 50px;
+  }
+  .coffee-header__display {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
+    border-radius: 50%;
+    background-color: #9acfc5;
+    border: 5px solid #43beae;
+    box-sizing: border-box;
+  }
+  .coffee-header__details {
+    width: 8px;
+    height: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #9b9091;
+    box-shadow: -12px 0 0 #9b9091, -24px 0 0 #9b9091;
+  }
+  .coffee-medium {
+    width: 90%;
+    height: 160px;
+    position: absolute;
+    top: 80px;
+    left: calc(50% - 45%);
+    background-color: #bcb0af;
+  }
+  .coffee-medium:before {
+    content: "";
+    width: 90%;
+    height: 100px;
+    background-color: #776f6e;
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 45%);
+    border-radius: 20px 20px 0 0;
+  }
+  .coffe-medium__exit {
+    width: 60px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: calc(50% - 30px);
+    background-color: #231f20;
+  }
+  .coffe-medium__exit::before {
+    content: "";
+    width: 50px;
+    height: 20px;
+    border-radius: 0 0 50% 50%;
+    position: absolute;
+    bottom: -20px;
+    left: calc(50% - 25px);
+    background-color: #231f20;
+  }
+  .coffe-medium__exit::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    bottom: -30px;
+    left: calc(50% - 5px);
+    background-color: #231f20;
+  }
+  .coffee-medium__arm {
+    width: 70px;
+    height: 20px;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    background-color: #231f20;
+  }
+  .coffee-medium__arm::before {
+    content: "";
+    width: 15px;
+    height: 5px;
+    position: absolute;
+    top: 7px;
+    left: -15px;
+    background-color: #9e9495;
+  }
+  .coffee-medium__cup {
+    width: 80px;
+    height: 47px;
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 40px);
+    background-color: #FFF;
+    border-radius: 0 0 70px 70px / 0 0 110px 110px;
+  }
+  .coffee-medium__cup::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 6px;
+    right: -13px;
+    border: 5px solid #FFF;
+    border-radius: 50%;
+  }
+  @keyframes liquid {
+    0% {
+      height: 0px;  
+      opacity: 1;
+    }
+    5% {
+      height: 0px;  
+      opacity: 1;
+    }
+    20% {
+      height: 62px;  
+      opacity: 1;
+    }
+    95% {
+      height: 62px;
+      opacity: 1;
+    }
+    100% {
+      height: 62px;
+      opacity: 0;
+    }
+  }
+  .coffee-medium__liquid {
+    width: 6px;
+    height: 63px;
+    opacity: 0;
+    position: absolute;
+    top: 50px;
+    left: calc(50% - 3px);
+    background-color: #74372b;
+    animation: liquid 4s 4s linear infinite;
+  }
+  .coffee-medium__smoke {
+    width: 8px;
+    height: 20px;
+    position: absolute;  
+    border-radius: 5px;
+    background-color: #b3aeae;
+  }
+  @keyframes smokeOne {
+    0% {
+      bottom: 20px;
+      opacity: 0;
+    }
+    40% {
+      bottom: 50px;
+      opacity: .5;
+    }
+    80% {
+      bottom: 80px;
+      opacity: .3;
+    }
+    100% {
+      bottom: 80px;
+      opacity: 0;
+    }
+  }
+  @keyframes smokeTwo {
+    0% {
+      bottom: 40px;
+      opacity: 0;
+    }
+    40% {
+      bottom: 70px;
+      opacity: .5;
+    }
+    80% {
+      bottom: 80px;
+      opacity: .3;
+    }
+    100% {
+      bottom: 80px;
+      opacity: 0;
+    }
+  }
+  .coffee-medium__smoke-one {
+    opacity: 0;
+    bottom: 50px;
+    left: 102px;
+    animation: smokeOne 3s 4s linear infinite;
+  }
+  .coffee-medium__smoke-two {
+    opacity: 0;
+    bottom: 70px;
+    left: 118px;
+    animation: smokeTwo 3s 5s linear infinite;
+  }
+  .coffee-medium__smoke-three {
+    opacity: 0;
+    bottom: 65px;
+    right: 118px;
+    animation: smokeTwo 3s 6s linear infinite;
+  }
+  .coffee-medium__smoke-for {
+    opacity: 0;
+    bottom: 50px;
+    right: 102px;
+    animation: smokeOne 3s 5s linear infinite;
+  }
+  .coffee-footer {
+    width: 95%;
+    height: 15px;
+    position: absolute;
+    bottom: 25px;
+    left: calc(50% - 47.5%);
+    background-color: #41bdad;
+    border-radius: 10px;
+  }
+  .coffee-footer::after {
+    content: "";
+    width: 106%;
+    height: 26px;
+    position: absolute;
+    bottom: -25px;
+    left: -8px;
+    background-color: #000;
+  }
+  
+
+
